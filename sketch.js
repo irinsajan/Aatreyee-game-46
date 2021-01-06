@@ -89,7 +89,9 @@ function setup(){
 
    ground = new Ground(width/2-200,height-30,width*3,10);
 
-    
+   cyclist = createSprite(300,height/2);
+   cyclist.addImage(cyclistImage);
+   cyclist.visible = false;
    
 
 }
@@ -242,10 +244,13 @@ for(var k=0;k<hotDog.length;k++){
   
 
    else if(gameState===2){
-     drawSprites();
+     scene.destroy();
+      button.destroy();
+      cloud.destroy();
+      junko.destroy();
       background(sceneImg3);
-      image( cyclistImage,width/2-800,height/2-150,300,300);
- 
+      cyclist.visible = true;
+      drawSprites();
   }
 
 
